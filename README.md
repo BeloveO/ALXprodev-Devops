@@ -1,10 +1,9 @@
 # ALXprodev-Devops
 
+## Advanced_shell
+
 <details>
-
-<summary>## Advanced_shell</summary>
-
-### 0. API Request Automation
+<summary>0. API Request Automation</summary>
 
 **Objective:** Automate the process of making API requests to the Pokémon API and saving the results to a file
 
@@ -14,9 +13,9 @@
 - It should save the response to a json file: data.json
 - If the request fails, it should log the error to an error file: errors.txt
 
-Sample Output
+**Sample Output:**
 
-``
+```
 ghostmode@GhostMode:~$ jq . < data.json | head -n 50 \
 {\
   "abilities": [\
@@ -69,10 +68,13 @@ ghostmode@GhostMode:~$ jq . < data.json | head -n 50 \
         "name": "yellow",
         "url": "https://pokeapi.co/api/v2/version/3/"
 ghostmode@GhostMode:~$
-``
-**File:** apiAutomation-0x00[]
+```
 
-### 1. Extract Pokémon Data
+**File:** apiAutomation-0x00[]
+</details>
+
+<details>
+<summary>1. Extract Pokémon Data</summary>
 
 **Objective:** Use advanced text manipulation tools (jq, awk, sed) to extract specific data from the API response.
 
@@ -83,14 +85,18 @@ ghostmode@GhostMode:~$
 - You should only use these commands: jq, awk, sed
 
 **Sample Output:**
-``
+
+```
 ghostmode@GhostMode:~$ ./parse_pikachu
 Pikachu is of type Electric, weighs 6kg, and is 0.4m tall.
 ghostmode@GhostMode:~$
-``
-**File:** data_extraction_automation-0x01[]
+```
 
-### 2. Batch Pokémon Data Retrieval
+**File:** data_extraction_automation-0x01[]
+</details>
+
+<details>
+<summary>2. Batch Pokémon Data Retrieval</summary>
 
 **Objective:** Automate the retrieval of data for multiple Pokémon and store it in separate files.
 
@@ -101,7 +107,8 @@ ghostmode@GhostMode:~$
 - Handle any potential rate-limiting issues by adding a delay between requests.
 
 **Sample Output:**
-``
+
+```
 ghostmode@GhostMode:~$ ./fetch_multiple_pokemon
 Fetching data for bulbasaur...
 Saved data to pokemon_data/bulbasaur.json ✅
@@ -145,10 +152,13 @@ ghostmode@GhostMode:~$ jq . < pokemon_data/bulbasaur.json | head -n 30
     }
   ],
 ghostmode@GhostMode:~$
-``
-**File:** batchProcessing-0x02[]
+```
 
-### 3. Summarize Pokémon Data
+**File:** batchProcessing-0x02[]
+</details>
+
+<details>
+<summary>3. Summarize Pokémon Data</summary>
 
 **Objective:** Create a report that summarizes data for multiple Pokémon.
 
@@ -159,7 +169,8 @@ ghostmode@GhostMode:~$
 - Use awk to calculate the average height and weight of all Pokémon in the report.
 
 **Sample Output:**
-``
+
+```
 ghostmode@GhostMode:~$ ./pokemon_report
 CSV Report generated at: pokemon_report.csv
 
@@ -173,10 +184,13 @@ Venusaur,2.0,100.0
 Average Height: 1.08 m
 Average Weight: 29.48 kg
 ghostmode@GhostMode:~$
-``
-**File:** summaryData-0x03[]
+```
 
-### 4. Error Handling and Retry Logic
+**File:** summaryData-0x03[]
+</details>
+
+<details>
+<summary>4. Error Handling and Retry Logic</summary>
 
 **Objective:** Add robust error handling and retry logic for API requests.
 
@@ -186,7 +200,10 @@ ghostmode@GhostMode:~$
 - If an API request fails, implement a retry mechanism that attempts the request up to 3 times before logging the error and skipping to the next Pokémon.
 **File:** batchProcessing-0x02[]
 
-### 5. Parallel Data Fetching
+</details>
+
+<details>
+<summary>5. Parallel Data Fetching</summary>
 
 **Objective:** Speed up data retrieval using parallel processing.
 
@@ -195,4 +212,5 @@ ghostmode@GhostMode:~$
 - Write a script that fetches data for these Pokémon[Bulbasaur, Ivysaur, Venusaur, Charmander, Charmeleon ] in parallel by leveraging background processes and process management tools.
 - Ensure that the script handles background processes properly and waits for all processes to complete before moving to the next step.
 **File:** batchProcessing-0x04[]
+
 </details>
