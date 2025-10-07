@@ -1,0 +1,14 @@
+#!/bin/bash
+# Speed up data retrieval using parallel processing.
+pokemon_data="pokemon_data"
+mkdir -p "$pokemon_data"
+for pokemon in "bulbasaur" "ivysaur" "venusaur" "charmander" "charmeleon"; do
+    (printf "Fetching data for %s...\n" "$pokemon" | xargs -I {} -P 3 -n 1 bash -c '
+        pokemon="$1"
+        echo "Fetching data for $pokemon..."
+        curl -s -f "https://pokeapi.co/api/v2/pokemon/$pokemon" -o "'"$pokemon_data"'/$pokemon.json" && echo "✓ $pokemon" || echo "✗ $pokemon"
+    ' _ "$pokemon") &
+    sleep 1
+done
+wait
+echo "Data retrieval complete."
