@@ -1,4 +1,4 @@
 #!/bin/bash
 # This script automates the process of making API requests.
 
-curl -s https://pokeapi.co/api/v2/pokemon/ -o data.json || echo "$(date): Request failed" >> error.txt
+curl -s https://pokeapi.co/api/v2/pokemon/ -o data.json || echo "$(date): Request failed" >> errors.txt
