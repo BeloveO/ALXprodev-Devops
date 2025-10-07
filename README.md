@@ -70,7 +70,7 @@ ghostmode@GhostMode:~$ jq . < data.json | head -n 50 \
 ghostmode@GhostMode:~$
 ```
 
-**File:** apiAutomation-0x00[]
+**File:** [apiAutomation-0x00]()
 </details>
 
 <details>
@@ -92,7 +92,7 @@ Pikachu is of type Electric, weighs 6kg, and is 0.4m tall.
 ghostmode@GhostMode:~$
 ```
 
-**File:** data_extraction_automation-0x01[]
+**File:** [data_extraction_automation-0x01]()
 </details>
 
 <details>
@@ -154,7 +154,7 @@ ghostmode@GhostMode:~$ jq . < pokemon_data/bulbasaur.json | head -n 30
 ghostmode@GhostMode:~$
 ```
 
-**File:** batchProcessing-0x02[]
+**File:** [batchProcessing-0x02]()
 </details>
 
 <details>
@@ -186,7 +186,7 @@ Average Weight: 29.48 kg
 ghostmode@GhostMode:~$
 ```
 
-**File:** summaryData-0x03[]
+**File:** [summaryData-0x03]()
 </details>
 
 <details>
@@ -198,7 +198,7 @@ ghostmode@GhostMode:~$
 
 - Modify the script from Task 2 to handle potential errors (e.g., network issues, invalid Pokémon names).
 - If an API request fails, implement a retry mechanism that attempts the request up to 3 times before logging the error and skipping to the next Pokémon.
-**File:** batchProcessing-0x02[]
+**File:** [batchProcessing-0x02]()
 
 </details>
 
@@ -211,6 +211,6 @@ ghostmode@GhostMode:~$
 
 - Write a script that fetches data for these Pokémon[Bulbasaur, Ivysaur, Venusaur, Charmander, Charmeleon ] in parallel by leveraging background processes and process management tools.
 - Ensure that the script handles background processes properly and waits for all processes to complete before moving to the next step.
-**File:** batchProcessing-0x04[]
+**File:** [batchProcessing-0x04]()
 
 </details>
