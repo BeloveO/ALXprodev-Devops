@@ -3,8 +3,21 @@
 
  for pokemon in "bulbasaur" "ivysaur" "venusaur" "charmander" "charmeleon"; do
     # makes API request for each pokemon and saves response to a file named after the pokemon in the directory pokemon_data
+    # make API request with retry logic and error handling
     pokemon_data="pokemon_data"
     mkdir -p "$pokemon_data"
-    curl -s "https://pokeapi.co/api/v2/pokemon/$pokemon" -o "$pokemon_data/$pokemon.json"
- done
- sleep 1
+    success=false
+    for attempt in {1..3}; do
+        if curl -s -f "https://pokeapi.co/api/v2/pokemon/$pokemon" -o "$pokemon_data/$pokemon.json"; then
+            success=true
+            break
+        else
+            echo "Attempt $attempt for $pokemon failed. Retrying..."
+            sleep 2
+        fi
+    done
+    if [ "$success" = false ]; then
+        echo "$(date): Failed to retrieve data for $pokemon after 3 attempts" >> errors.txt
+    fi
+    sleep 1
+done
