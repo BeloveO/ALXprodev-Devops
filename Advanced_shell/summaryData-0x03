@@ -4,5 +4,5 @@
 echo "CSV Report generated at: pokemon_report.csv"
 echo "Name,Height(m),Weight(kg)" > pokemon_report.csv
 for file in pokemon_data/*.json; do
-    jq -r '"\(.name)|\(.height)|\(.weight)"' "$file" | awk -F'|' '{printf "%s,%.1f,%.1f\n", $1, $2/10, $3/10}'
+    jq -r '"\(.name)|\(.height)|\(.weight)"' "$file" | awk -F'|' '{printf "%s,%.1f,%.1f\n", $1, $2/10, $3/10}' | sed 's/|/,/g'
 done >> pokemon_report.csv
