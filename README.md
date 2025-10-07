@@ -1,6 +1,8 @@
 # ALXprodev-Devops
 
-## Advanced_shell
+<details>
+
+<summary>## Advanced_shell</summary>
 
 ### 0. API Request Automation
 
@@ -193,3 +195,4 @@ ghostmode@GhostMode:~$
 - Write a script that fetches data for these Pokémon[Bulbasaur, Ivysaur, Venusaur, Charmander, Charmeleon ] in parallel by leveraging background processes and process management tools.
 - Ensure that the script handles background processes properly and waits for all processes to complete before moving to the next step.
 **File:** batchProcessing-0x04[]
+</details>
