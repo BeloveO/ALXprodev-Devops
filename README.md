@@ -15,10 +15,10 @@
 Sample Output
 
 ``
-ghostmode@GhostMode:~$ jq . < data.json | head -n 50 /
-{/
-  "abilities": [/
-    {/
+ghostmode@GhostMode:~$ jq . < data.json | head -n 50 \
+{\
+  "abilities": [\
+    {\
       "ability": {
         "name": "static",
         "url": "https://pokeapi.co/api/v2/ability/9/"
