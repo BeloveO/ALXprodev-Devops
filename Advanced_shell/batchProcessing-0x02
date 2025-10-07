@@ -1,0 +1,8 @@
+#!/bin/bash
+# Automate the retrieval of data for multiple Pokémon and store it in separate files.
+
+ for pokemon in Bulbasaur Ivysaur Venusaur Charmander Charmeleon; do 
+    # makes API request for each pokemon and saves response to a file named after the pokemon
+    curl -s "https://pokeapi.co/api/v2/pokemon/$pokemon" -o "$pokemon.json"
+ done
+ sleep 1
