@@ -2,7 +2,13 @@
 # Speed up data retrieval using parallel processing.
 pokemon_data="pokemon_data"
 mkdir -p "$pokemon_data"
+
+# clean up to kill all background processes on exit
+trap 'kill $(jobs -p) 2>/dev/null' EXIT
 for pokemon in "bulbasaur" "ivysaur" "venusaur" "charmander" "charmeleon"; do
+    while [ "$(jobs -rp | wc -l)" -ge 3 ]; do
+        sleep 1
+    done
     (printf "Fetching data for %s...\n" "$pokemon" | xargs -I {} -P 3 -n 1 bash -c '
         pokemon="$1"
         echo "Fetching data for $pokemon..."
