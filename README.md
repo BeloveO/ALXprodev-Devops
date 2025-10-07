@@ -12,12 +12,13 @@
 - It should save the response to a json file: data.json
 - If the request fails, it should log the error to an error file: errors.txt
 
-**Sample Output**
+Sample Output
+
 ``
-ghostmode@GhostMode:~$ jq . < data.json | head -n 50
-{
-  "abilities": [
-    {
+ghostmode@GhostMode:~$ jq . < data.json | head -n 50 /
+{/
+  "abilities": [/
+    {/
       "ability": {
         "name": "static",
         "url": "https://pokeapi.co/api/v2/ability/9/"
