@@ -1,0 +1,4 @@
+#!/bin/bash
+# Use advanced text manipulation tools (jq, awk, sed) to extract specific data from the API response.
+jq -r '"\(.name)|\(.type[0].type.name)|\(.weight)|\(.height)"' data.json | awk -F'|' '{printf "%s is of type %s, weighs %d and is %d tall.\n", $1, $2, $3, $4}'
+# The output should be formatted as: "<name> is of type <type>, weighs <weight> and is <height> tall."
