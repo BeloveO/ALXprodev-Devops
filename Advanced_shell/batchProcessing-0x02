@@ -2,7 +2,9 @@
 # Automate the retrieval of data for multiple Pokémon and store it in separate files.
 
  for pokemon in "bulbasaur" "ivysaur" "venusaur" "charmander" "charmeleon"; do
-    # makes API request for each pokemon and saves response to a file named after the pokemon
-    curl -s "https://pokeapi.co/api/v2/pokemon/$pokemon" -o "$pokemon.json"
+    # makes API request for each pokemon and saves response to a file named after the pokemon in the directory pokemon_data
+    pokemon_data="pokemon_data"
+    mkdir -p "$pokemon_data"
+    curl -s "https://pokeapi.co/api/v2/pokemon/$pokemon" -o "$pokemon_data/$pokemon.json"
  done
  sleep 1
